@@ -6,7 +6,7 @@
 - webpack-React脚手架
 - 组件通信（父子组件相互通信、PubSub模块）
 - axios 异步请求
-- 生命周期的理解与使用
+- 组件生命周期
 - React - router
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
