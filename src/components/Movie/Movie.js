@@ -1,12 +1,27 @@
 import React,{Component} from 'react';
 import { Carousel } from 'antd';
 import InTheaters from './InTheaters'
+import axios from 'axios'
 import './css/movie.css'
 class Movie extends Component{
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
+    this.state={
+      intheaters_arr:null
+    }
+  }
+  componentDidMount(){
 
+    let url = "https://api.douban.com/v2/movie/in_theaters";
+    axios.get(url)
+      .then(response=>{
+        console.log(response.subjects);
+      })
+      .catch(error=>{
+        console.log(error);
+      })
+
+  }
   render(){
 
     return(
