@@ -2,3 +2,13 @@
   background-color: lightblue ;
   height: 200px;
 }
+.example {
+  text-align: center;
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 30px 50px;
+  margin-top: 0px;
+  width: auto;
+  height: 1000px
+}
