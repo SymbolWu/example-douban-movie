@@ -22,7 +22,6 @@ class Movie extends Component{
       url:'v2/movie/in_theaters'
       // url:'v2/book/1220562'
     }).then(response=>{
-        console.log(response.data.subjects);
         this.setState({
           initView:false,
           intheaters_arr:response.data.subjects

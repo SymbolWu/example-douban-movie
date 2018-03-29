@@ -17,8 +17,63 @@
   display: block;
 }
 .custom-card {
-  padding: 10px 16px;
+  margin-top: 10px;
 }
 .custom-card p {
   color: #999;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+
+.nowplaying{
+  margin-top: 20px;
+  width: 850px;
+  float: left;
+}
+.nowplaying h2{
+  font: 15px Arial, Helvetica, sans-serif;
+    color: #072;
+    margin: 0 0 12px 90px;
+    line-height: 150%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.list{
+
+      margin-left: 26px;
+}
+.list-item{
+  width: 115px;
+  display: inline-block;
+  vertical-align: top;/* 顶格对齐 */
+  margin: 0 0 32px 25px;
+
+}
+.card{
+  width: 100%;
+  height: 240px;
+  padding: 0;
+
+}
+.card .ant-card-body{
+  padding: 0;
+
+}
+.title {
+  color: black;
+  display: inline-block;
+  vertical-align: top;
+  height: 24px;
+  line-height: 24px;
+  letter-spacing: normal;
+  width: 115px;
+
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  text-align: center;
+
 }

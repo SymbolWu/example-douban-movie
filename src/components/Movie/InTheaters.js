@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-import { Row, Col,Card } from 'antd';
+import { Card } from 'antd';
 import './css/intheaters.css'
 class InTheaters extends Component{
   // constructor(props) {
@@ -9,30 +9,28 @@ class InTheaters extends Component{
 
   render(){
     let {intheaters_arr} = this.props;
-    console.log(intheaters_arr);
     return(
-      <div className="gutter-example">
-        <h3>正在热映</h3>
-          <Row gutter={16}>
-              {
-                intheaters_arr.map((item,index)=>{
-                  return(
-                    <Col key={item.id} className="gutter-row" span={6}>
-                    <Card  style={{ width: 240,height:444 }} bodyStyle={{ padding: 0 }}>
-                      <div className="custom-image">
-                        <img alt="example" width="100%" height="333px" src={item.images.medium} />
-                      </div>
-                      <div className="custom-card">
-                        <h3>{item.title}</h3>
-                        <p>{item.original_title}</p>
-                      </div>
-                    </Card>
-                    </Col>
-                  )
-                })
-              }
-
-          </Row>
+      <div className="nowplaying">
+        <h2>正在上映</h2>
+        <ul className="list">
+          {
+            intheaters_arr.map((item,index)=>{
+              return(
+                <li key={item.id} className="list-item">
+                <Card  className="card">
+                  <div className="custom-image">
+                    <img alt="example" width="100%" height="170px" src={item.images.small} />
+                  </div>
+                  <div className="custom-card">
+                    <a className="title">{item.title}</a>
+                    <p>{item.original_title}</p>
+                  </div>
+                </Card>
+                </li>
+              )
+            })
+          }
+        </ul>
       </div>
 
     )
