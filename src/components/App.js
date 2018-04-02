@@ -1,6 +1,14 @@
 import React,{Component} from 'react';
 import { Menu, Icon } from 'antd';
-import { Link } from 'react-router'
+
+import {Switch,Route,Link} from 'react-router-dom'
+import Home from './Home/Home'
+import City from './City/City'
+import Book from './Book/Book'
+import Movie from './Movie/Movie'
+import Music from './Music/Music'
+
+
 import 'antd/dist/antd.css';
 class App extends Component {
   constructor(props) {
@@ -26,7 +34,13 @@ class App extends Component {
           <Menu.Item key="music"><Link to="/Music"><Icon type="play-circle-o" />音乐</Link></Menu.Item>
           <Menu.Item key="city"><Link to="/City"><Icon type="environment-o" />同城</Link></Menu.Item>
         </Menu>
-        {this.props.children}
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path="/Book" component={Book}/>
+          <Route path="/City" component={City}/>
+          <Route path="/Movie" component={Movie}/>
+          <Route path="/Music" component={Music}/>
+        </Switch>
       </div>
 
     )

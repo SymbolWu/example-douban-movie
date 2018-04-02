@@ -1,23 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router,Route,IndexRoute,hashHistory} from 'react-router'
+import {HashRouter} from 'react-router-dom'
 import App from './components/App';
-import Home from './components/Home/Home'
-import City from './components/City/City'
-import Book from './components/Book/Book'
-import Movie from './components/Movie/Movie'
-import Music from './components/Music/Music'
 
 
 ReactDOM.render((
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
+  <HashRouter>
+    {/* <Route path="/" component={App}>
       <IndexRoute component={Home}></IndexRoute>
       <Route path="/Book" component={Book}></Route>
       <Route path="/City" component={City}></Route>
-      <Route path="/Movie" component={Movie}></Route>
+      <Route path="/Movie" component={Movie}>
+        <Route path='/Moive/:moiveid' component={MoiveDetail}></Route>
+      </Route>
       <Route path="/Music" component={Music}></Route>
-    </Route>
+    </Route> */}
+    <App />
 
-  </Router>
+  </HashRouter>
 ), document.getElementById('root'));
