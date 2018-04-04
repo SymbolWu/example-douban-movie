@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+
 import { Link } from 'react-router-dom';
 import { Card } from 'antd';
 import './css/intheaters.css'
@@ -23,11 +24,8 @@ class InTheaters extends Component{
                     <img alt="example" width="100%" height="170px" src={item.images.small} />
                   </div>
                   <div className="custom-card">
-
-                    {/* <a className="title">{item.title}</a> */}
-                    {/* <a className="title"><Link to={`/Moive/${item.id}`}>{item.title}</Link></a> */}
+                    {/* <Link to={`/Movie/${item.id}`} className="title" onClick={this.sendMoiveItem.bind(this,item)}>{item.title}</Link> */}
                     <Link to={`/Movie/${item.id}`} className="title">{item.title}</Link>
-
                     <p>{item.original_title}</p>
                   </div>
                 </Card>

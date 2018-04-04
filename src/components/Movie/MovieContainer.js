@@ -9,7 +9,7 @@ class MovieContainer extends Component{
   constructor(props) {
     super(props);
     this.state={
-      initView:true,
+      loading:true,
       intheaters_arr:null,
       errorInfo:''
     }
@@ -22,14 +22,14 @@ class MovieContainer extends Component{
       // url:'v2/book/1220562'
     }).then(response=>{
         this.setState({
-          initView:false,
+          loading:false,
           intheaters_arr:response.data.subjects
         });
       })
       .catch(error=>{
         console.log(error);
         this.setState({
-          initView:false,
+          loading:false,
           errorInfo:error
         });
       })
@@ -40,8 +40,8 @@ class MovieContainer extends Component{
 
   render(){
 
-    let {initView,intheaters_arr,errorInfo}=this.state;
-    if(initView){
+    let {loading,intheaters_arr,errorInfo}=this.state;
+    if(loading){
       return(
         <div className="example">
           <Spin />
