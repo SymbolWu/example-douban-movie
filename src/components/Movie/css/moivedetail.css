@@ -1,0 +1,18 @@
+.breadcrumb {
+  background-color:white;
+  padding: 0;
+}
+.container a{
+  color:#666;
+}
+.container a:hover{
+  color:#563d7c
+}
+.breadcrumb>li+li:before {
+    content: "/\A0";
+    padding: 0 5px;
+    color: #ccc;
+}
+.ant-rate{
+  font-size: 10px;
+}
