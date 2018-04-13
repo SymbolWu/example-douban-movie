@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import { Menu, Icon } from 'antd';
 // import { Navbar,Nav,NavItem} from 'react-bootstrap';
+//test mobx
 import {Switch,Route,Link} from 'react-router-dom'
 import Home from './Home/Home'
 import City from './City/City'
