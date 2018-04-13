@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import { Link } from 'react-router-dom';
-import './css/moivedetail.css'
 import { Rate } from 'antd';
 import { Grid, Row,Col ,Breadcrumb} from 'react-bootstrap';
+
+import './css/moivedetail.css'
 class MoiveDetailComponent extends Component{
   // constructor() {
   //

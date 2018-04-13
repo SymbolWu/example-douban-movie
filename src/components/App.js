@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Menu, Icon } from 'antd';
-
+// import { Navbar,Nav,NavItem} from 'react-bootstrap';
 import {Switch,Route,Link} from 'react-router-dom'
 import Home from './Home/Home'
 import City from './City/City'
@@ -27,7 +27,7 @@ class App extends Component {
     let {currentKey} =this.state;
     return(
       <div>
-        <Menu onClick={this.handleMenuClick} selectedKeys={[currentKey]} mode="horizontal">
+        <Menu theme="dark" onClick={this.handleMenuClick} selectedKeys={[currentKey]} mode="horizontal">
           <Menu.Item key="home"><Link to="/"><Icon type="home" />主页</Link></Menu.Item>
           <Menu.Item key="book"><Link to="/Book"><Icon type="book" />图书</Link></Menu.Item>
           <Menu.Item key="movie"><Link to="/Movie"><Icon type="video-camera" />电影</Link></Menu.Item>
