@@ -30,7 +30,7 @@ class App extends Component {
         <Menu theme="dark" onClick={this.handleMenuClick} selectedKeys={[currentKey]} mode="horizontal">
           <Menu.Item key="home"><Link to="/"><Icon type="home" />主页</Link></Menu.Item>
           <Menu.Item key="book"><Link to="/Book"><Icon type="book" />图书</Link></Menu.Item>
-          <Menu.Item key="movie"><Link to="/Movie"><Icon type="video-camera" />电影</Link></Menu.Item>
+          <Menu.Item key="movie"><Link to="/Movie"><Icon type="video-camera" />电影11</Link></Menu.Item>
           <Menu.Item key="music"><Link to="/Music"><Icon type="play-circle-o" />音乐</Link></Menu.Item>
           <Menu.Item key="city"><Link to="/City"><Icon type="environment-o" />同城</Link></Menu.Item>
         </Menu>
