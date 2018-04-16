@@ -6,7 +6,7 @@ import {Switch,Route,Link} from 'react-router-dom'
 import Home from './Home/Home'
 import City from './City/City'
 import Book from './Book/Book'
-import Movie from './Movie/Movie'
+import MovieRouter from './Movie/Router/MovieRouter'
 import Music from './Music/Music'
 
 
@@ -39,7 +39,7 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           <Route path="/Book" component={Book}/>
           <Route path="/City" component={City}/>
-          <Route path="/Movie" component={Movie}/>
+          <Route path="/Movie" component={MovieRouter}/>
           <Route path="/Music" component={Music}/>
         </Switch>
       </div>

@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 
 import { Link } from 'react-router-dom';
 import { Card } from 'antd';
-import './css/intheaters.css'
+import '../css/intheaters.css'
 
-class InTheaters extends Component{
+class InTheatersComponent extends Component{
   // constructor(props) {
   //   super(props);
   // }
@@ -41,4 +41,4 @@ class InTheaters extends Component{
   }
 }
 
-export default InTheaters;
+export default InTheatersComponent;
