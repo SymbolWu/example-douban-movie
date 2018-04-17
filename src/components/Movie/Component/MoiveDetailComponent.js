@@ -39,7 +39,7 @@ class MoiveDetailComponent extends Component {
               <h5>{moiveItem.original_title}</h5>
               <Row className="show-grid">
                 <Col md={3}>
-                  <img alt={moiveItem.id} src={moiveItem.images.small} />
+                  <img alt={moiveItem.id} className="img-responsive" src={moiveItem.images.small} />
                 </Col>
                 <Col md={6}>
                   <Row className="show-grid">
@@ -72,8 +72,9 @@ class MoiveDetailComponent extends Component {
                       <p>看过人数:{moiveItem.collect_count}</p>
                       <a href={moiveItem.alt} target="_blank">豆瓣原页面</a>
                     </Col>
-                    <Col md={3}>
-                      <p>豆瓣评分</p>
+                    <Col md={3} className="rating">
+                      <hr/>
+                      <h5>豆瓣评分</h5>
                       <h3>{moiveItem.rating.average.toFixed(1)}</h3>
                       <Rate allowHalf disabled defaultValue={parseFloat(moiveItem.rating.average.toFixed(1))/2}/>
                     </Col>

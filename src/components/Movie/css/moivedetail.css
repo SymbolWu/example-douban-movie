@@ -19,3 +19,16 @@
 .ant-rate{
   font-size: 10px;
 }
+.img-responsive {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+/*在小于768像素的屏幕里,这里的样式才生效*/
+
+@media (min-width: 767px) {
+
+    .rating hr{
+      hidden:"hidden"
+    }
+}
