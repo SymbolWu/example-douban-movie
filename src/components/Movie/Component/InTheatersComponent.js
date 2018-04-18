@@ -21,33 +21,8 @@ class InTheatersComponent extends Component{
   }
 
   render(){
+
     let {loading,intheaters_arr,errorInfo}=this.store;
-
-      // <div className="nowplaying">
-      //   <h2>正在上映</h2>
-      //   <ul className="list">
-      //     {
-      //       intheaters_arr.map((item,index)=>{
-      //         return(
-      //           <li key={item.id} className="list-item">
-      //           <Card  className="card">
-      //             <div className="custom-image">
-      //               <img alt="example" width="100%" height="170px" src={item.images.small} />
-      //             </div>
-      //             <div className="custom-card">
-      //               {/* <Link to={`/Movie/${item.id}`} className="title" onClick={this.sendMoiveItem.bind(this,item)}>{item.title}</Link> */}
-      //               <Link to={`/Movie/${item.id}`} className="title">{item.title}</Link>
-      //               <p>{item.original_title}</p>
-      //             </div>
-      //           </Card>
-      //           </li>
-      //         )
-      //       })
-      //     }
-      //   </ul>
-      // </div>
-
-
       if(loading){
         return(
           <div className="example">
@@ -55,13 +30,23 @@ class InTheatersComponent extends Component{
           </div>
         )
       }else if(intheaters_arr){
+        let new_intheaters_arr=null;
+        let hidebuttn=false;
+        if(this.props.match===undefined){
+          new_intheaters_arr = intheaters_arr.slice(0,6);
+          hidebuttn=false;
+        }else{
+          new_intheaters_arr = intheaters_arr,
+          hidebuttn=true
+        }
         return(
           <div className="carousel-div">
             <Grid className="container">
               <h2>正在上映</h2>
+              <Link hidden={hidebuttn} to="/Movie/InTheaters">更多（正在热映）</Link>
               <Row className="show-grid">
                 {
-                  intheaters_arr.map((item,index)=>{
+                  new_intheaters_arr.map((item,index)=>{
                     return(
                       <Col key={item.id} lg={2} md={3} sm={3} xs={6}>
                         <div>
