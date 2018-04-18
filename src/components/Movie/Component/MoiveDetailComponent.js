@@ -25,7 +25,7 @@ class MoiveDetailComponent extends Component {
     if (moiveItem_loading){
       return(
         <div className="example">
-          <Spin />
+          <Spin size="large"/>
         </div>
       )
     }else if (moiveItem) {
@@ -38,51 +38,45 @@ class MoiveDetailComponent extends Component {
   			      </h3>
               <h5>{moiveItem.original_title}</h5>
               <Row className="show-grid">
-                <Col md={3}>
+                <Col lg={3} md={3} sm ={6}>
                   <img alt={moiveItem.id} className="img-responsive" src={moiveItem.images.small} />
                 </Col>
-                <Col md={6}>
-                  <Row className="show-grid">
-                    <Col md={9}>
-                      <p>导演:{moiveItem.directors[0].name}</p>
-                      <Breadcrumb>主演:
-                        {
-                          moiveItem.casts.map((item,index)=>{
-                            return(
+                <Col lg={5} md={6} sm ={6}>
+                  <p>导演:{moiveItem.directors[0].name}</p>
+                  <Breadcrumb>主演:
+                    {
+                      moiveItem.casts.map((item,index)=>{
+                        return(
 
-                              <Breadcrumb.Item active key={item.id}><a href={item.alt} target="_blank">{item.name}</a></Breadcrumb.Item>
-                            )
-                          })
-                        }
-                      </Breadcrumb>
-                      <Breadcrumb>类型:
-                        {
-                          moiveItem.genres.map((item,index)=>{
-                            return(
+                          <Breadcrumb.Item active key={item.id}><a href={item.alt} target="_blank">{item.name}</a></Breadcrumb.Item>
+                        )
+                      })
+                    }
+                  </Breadcrumb>
+                  <Breadcrumb>类型:
+                    {
+                      moiveItem.genres.map((item,index)=>{
+                        return(
 
-                              <Breadcrumb.Item active key={index}>{item}</Breadcrumb.Item>
-                            )
-                          })
-                        }
-                      </Breadcrumb>
-                      <p>制片国家地区:{moiveItem.countries}</p>
-                      <p>年代:{moiveItem.year}</p>
-                      <p>评论数:{moiveItem.comments_count}</p>
-                      <p>想看人数:{moiveItem.wish_count}</p>
-                      <p>看过人数:{moiveItem.collect_count}</p>
-                      <a href={moiveItem.alt} target="_blank">豆瓣原页面</a>
-                    </Col>
-                    <Col md={3} className="rating">
-                      <hr/>
-                      <h5>豆瓣评分</h5>
-                      <h3>{moiveItem.rating.average.toFixed(1)}</h3>
-                      <Rate allowHalf disabled defaultValue={parseFloat(moiveItem.rating.average.toFixed(1))/2}/>
-                    </Col>
-                  </Row>
-
+                          <Breadcrumb.Item active key={index}>{item}</Breadcrumb.Item>
+                        )
+                      })
+                    }
+                  </Breadcrumb>
+                  <p>制片国家地区:{moiveItem.countries}</p>
+                  <p>年代:{moiveItem.year}</p>
+                  <p>评论数:{moiveItem.comments_count}</p>
+                  <p>想看人数:{moiveItem.wish_count}</p>
+                  <p>看过人数:{moiveItem.collect_count}</p>
+                  <a href={moiveItem.alt} target="_blank">豆瓣原页面</a>
                 </Col>
 
-                <Col md={3}>
+                <Col lg={4} md={3} sm ={12} className="rating">
+                  <hr/>
+                  <h5>豆瓣评分</h5>
+                  <h3>{moiveItem.rating.average.toFixed(1)}</h3>
+                  <Rate allowHalf disabled defaultValue={parseFloat(moiveItem.rating.average.toFixed(1))/2}/>
+                  <hr/>
                 </Col>
               </Row>
               <h4>{moiveItem.title}的剧情简介</h4>

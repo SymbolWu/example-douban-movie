@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {inject,observer} from 'mobx-react'
 import { Carousel,Spin } from 'antd';
+import { Link } from 'react-router-dom';
 import InTheatersComponent from './InTheatersComponent'
 
 
@@ -25,19 +26,14 @@ class MovieHomeComponent extends Component{
     if(loading){
       return(
         <div className="example">
-          <Spin />
+          <Spin size="large"/>
         </div>
       )
     }else if(intheaters_arr){
       return(
         <div className="carousel-div">
-          <Carousel autoplay effect="fade">
-            <div><h3>Movie Component1</h3></div>
-            <div><h3>Movie Component2</h3></div>
-            <div><h3>Movie Component3</h3></div>
-            <div><h3>Movie Component5</h3></div>
-          </Carousel>
-          <InTheatersComponent intheaters_arr={intheaters_arr}/>
+          <Link to="/Movie/InTheaters">更多（正在热映）</Link>
+          {/* <InTheatersComponent intheaters_arr={intheaters_arr}/> */}
         </div>
         )
     }else{

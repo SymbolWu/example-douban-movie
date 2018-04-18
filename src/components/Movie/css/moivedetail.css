@@ -29,6 +29,7 @@
 @media (min-width: 767px) {
 
     .rating hr{
-      hidden:"hidden"
+      display: none;
+      /* background-color: red */
     }
 }
