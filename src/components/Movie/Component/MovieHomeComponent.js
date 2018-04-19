@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import {inject,observer} from 'mobx-react'
 import { Spin } from 'antd';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import InTheatersComponent from './InTheatersComponent'
 
 
@@ -22,28 +22,25 @@ class MovieHomeComponent extends Component{
   }
   render(){
 
-    let {loading,intheaters_arr,errorInfo}=this.store;
+    let {loading,errorInfo}=this.store;
+    console.log('MovieHomeComponent - errorInfo:'+Boolean(errorInfo));
+    let reqError = Boolean(errorInfo);
     if(loading){
       return(
         <div className="example">
           <Spin size="large"/>
         </div>
       )
-    }else if(intheaters_arr){
+    }else if(reqError){
       return(
-
-        <div>
-          <InTheatersComponent/>
-
-        </div>
-          // <InTheatersComponent intheaters_arr={intheaters_arr.slice(0,7)}/>
-
-
+          <h1>信息异常{errorInfo.Error}</h1>
         )
     }else{
       return(
-        <h1>信息异常{errorInfo}</h1>
-      )
+        <div>
+          <InTheatersComponent/>
+        </div>
+        )
     }
 
 

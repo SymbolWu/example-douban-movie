@@ -22,14 +22,14 @@ class MoiveHomeStore {
     axios({
       method:'get',
       baseURL:'/api',
+      // url:'v2/moFvie/in_theaters'
       url:'v2/movie/in_theaters'
-      // url:'v2/book/1220562'
     }).then(response=>{
       this.loading =false;
       this.intheaters_arr = response.data.subjects;
       })
       .catch(error=>{
-        console.log(error);
+        console.log('fetchIntheatersMoive_Error:'+error);
         this.loading =false;
         this.errorInfo = error;
       })
@@ -44,6 +44,7 @@ class MoiveHomeStore {
       this.moiveItem=response.data;
 
     }).catch(error=>{
+      console.log('fetchMoiveDetail:'+error);
       this.moiveItem_loading=false;
       this.moiveItem_errorInfo=error;
 

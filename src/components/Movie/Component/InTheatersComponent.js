@@ -17,7 +17,6 @@ class InTheatersComponent extends Component{
     if(intheaters_arr.length===0){
       fetchIntheatersMoive();
     }
-    console.log("InTheatersComponent");
   }
 
   render(){
@@ -36,7 +35,7 @@ class InTheatersComponent extends Component{
           new_intheaters_arr = intheaters_arr.slice(0,6);
           hidebuttn=false;
         }else{
-          new_intheaters_arr = intheaters_arr,
+          new_intheaters_arr = intheaters_arr;
           hidebuttn=true
         }
         return(
