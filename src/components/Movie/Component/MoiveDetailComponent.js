@@ -29,6 +29,7 @@ class MoiveDetailComponent extends Component {
         </div>
       )
     }else if (moiveItem) {
+      console.log('moiveItemrating:'+Math.round(moiveItem.rating.average)/2);
       return(
         <Grid className="container">
           <Row className="show-grid">
@@ -36,7 +37,11 @@ class MoiveDetailComponent extends Component {
               <h3>
                 {moiveItem.title}
   			      </h3>
-              <h5>{moiveItem.original_title}</h5>
+              {
+                (moiveItem.original_title===moiveItem.title)
+                ?(<h5>{moiveItem.year}</h5>)
+                :(<h5>{moiveItem.original_title}</h5>)
+              }
               <Row className="show-grid">
                 <Col lg={3} md={3} sm ={6}>
                   <img alt={moiveItem.id} className="img-responsive" src={moiveItem.images.small} />
@@ -75,7 +80,7 @@ class MoiveDetailComponent extends Component {
                   <hr/>
                   <h5>豆瓣评分</h5>
                   <h3>{moiveItem.rating.average.toFixed(1)}</h3>
-                  <Rate allowHalf disabled defaultValue={parseFloat(moiveItem.rating.average.toFixed(1))/2}/>
+                  <Rate allowHalf disabled defaultValue={Math.round(moiveItem.rating.average)/2}/>
                   <hr/>
                 </Col>
               </Row>

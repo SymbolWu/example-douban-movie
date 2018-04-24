@@ -33,3 +33,10 @@
       /* background-color: red */
     }
 }
+
+/* @media (max-width: 575px) {
+
+    .img-responsive{
+      display: none;
+    }
+} */
