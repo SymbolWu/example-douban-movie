@@ -10,37 +10,54 @@ import '../css/movie.css'
 class MovieHomeComponent extends Component{
   constructor(props) {
     super(props);
-    console.log(props);
     this.store = props.store.moiveHomeStore;
   }
   componentDidMount(){
-    let {intheaters_arr,fetchIntheatersMoive}=this.store;
+    let {intheaters_arr,comingsoon_arr,fetchComingSoonMoive,fetchIntheatersMoive}=this.store;
     if(intheaters_arr.length===0){
       fetchIntheatersMoive();
+    }
+    if(comingsoon_arr.length===0){
+      fetchComingSoonMoive();
     }
 
   }
   render(){
 
-    let {loading,errorInfo}=this.store;
-    console.log('MovieHomeComponent - errorInfo:'+Boolean(errorInfo));
-    let reqError = Boolean(errorInfo);
-    if(loading){
+    let { loading,
+          errorInfo,
+          intheaters_arr,
+          comingsoon_arr,
+          comingsoon_loading,
+          comingsoon_errorInfo}=this.store;
+
+    let errorInTheaters = Boolean(errorInfo);
+    let errorComingSoon = Boolean(comingsoon_errorInfo);
+
+    if(loading||comingsoon_loading){
       return(
         <div className="example">
           <Spin size="large"/>
         </div>
       )
-    }else if(reqError){
+    }else if(errorInTheaters||errorComingSoon){
       return(
           <h1>信息异常{errorInfo.Error}</h1>
         )
-    }else{
+    }else if(intheaters_arr.length>0&&comingsoon_arr.length>0){
       return(
         <div>
-          <InTheatersComponent/>
+          {/* <div>Test</div> */}
+          <InTheatersComponent showArr={intheaters_arr} link_path={'/Movie/InTheaters'} section_Title={'影院热映'} />
+          <InTheatersComponent showArr={comingsoon_arr} link_path={'/Movie/ComingSoon'} section_Title={'即将上映'}/>
         </div>
         )
+    }else{
+      return(
+        <div className="example">
+          <Spin size="large"/>
+        </div>
+      )
     }
 
 

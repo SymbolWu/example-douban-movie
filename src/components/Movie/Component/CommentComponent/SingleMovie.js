@@ -8,7 +8,7 @@ class SingleMovie extends Component {
   render(){
     let {item}=this.props;
     return(
-      <div>
+      <div className="SingleMovieDiv">
         <Image alt={item.title} className="img-responsive" src={item.images.small} thumbnail />
         <Link to={`/Movie/InTheaters/${item.id}`} className="title">{item.title}</Link>
         <span className="title">{item.rating.average} 分</span>

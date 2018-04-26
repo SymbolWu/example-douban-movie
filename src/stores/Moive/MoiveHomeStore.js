@@ -5,14 +5,24 @@ class MoiveHomeStore {
   @observable loading;
   @observable errorInfo;
 
+  @observable comingsoon_arr;
+  @observable comingsoon_loading;
+  @observable comingsoon_errorInfo;
+
   @observable moiveItem;
   @observable moiveItem_loading;
   @observable moiveItem_errorInfo;
+
+
 
   constructor() {
     this.intheaters_arr = [];
     this.loading=true;
     this.errorInfo='';
+
+    this.comingsoon_arr = [];
+    this.comingsoon_loading=true;
+    this.comingsoon_errorInfo='';
 
     this.moiveItem = null;
     this.moiveItem_loading=true;
@@ -33,6 +43,20 @@ class MoiveHomeStore {
         this.loading =false;
         this.errorInfo = error;
       })
+  }
+  @action fetchComingSoonMoive = ()=>{
+    axios({
+      method:'get',
+      baseURL:'/api',
+      url:'v2/movie/coming_soon'
+    }).then(response=>{
+      this.comingsoon_loading = false;
+      this.comingsoon_arr = response.data.subjects;
+    }).catch(error=>{
+      console.log('fetchComingSoonMoive:'+error);
+      this.comingsoon_loading =false;
+      this.comingsoon_errorInfo = error;
+    })
   }
   @action fetchMoiveDetail = (id)=>{
     axios({

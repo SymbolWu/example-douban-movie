@@ -4,10 +4,11 @@ import { Menu, Icon } from 'antd';
 //test mobx
 import {Switch,Route,Link} from 'react-router-dom'
 import Home from './Home/Home'
-import City from './City/City'
 import Book from './Book/Book'
 import MovieRouter from './Movie/Router/MovieRouter'
 import Music from './Music/Music'
+
+import './Commen/CSS/Nav.css'
 
 
 import 'antd/dist/antd.css';
@@ -28,17 +29,17 @@ class App extends Component {
     let {currentKey} =this.state;
     return(
       <div>
-        <Menu theme="dark" onClick={this.handleMenuClick} selectedKeys={[currentKey]} mode="horizontal">
-          <Menu.Item key="home"><Link to="/"><Icon type="home" />主页</Link></Menu.Item>
+        <Menu className="topNav" theme="dark" onClick={this.handleMenuClick} selectedKeys={[currentKey]} mode="horizontal">
+          <Menu.Item key="home"><Link to="/"><Icon type="home" />豆瓣</Link></Menu.Item>
           <Menu.Item key="book"><Link to="/Book"><Icon type="book" />图书</Link></Menu.Item>
-          <Menu.Item key="movie"><Link to="/Movie"><Icon type="video-camera" />电影11</Link></Menu.Item>
+          <Menu.Item key="movie"><Link to="/Movie"><Icon type="video-camera" />电影</Link></Menu.Item>
           <Menu.Item key="music"><Link to="/Music"><Icon type="play-circle-o" />音乐</Link></Menu.Item>
-          <Menu.Item key="city"><Link to="/City"><Icon type="environment-o" />同城</Link></Menu.Item>
+
         </Menu>
+        <div className="fill"></div>
         <Switch>
           <Route exact path='/' component={Home}/>
           <Route path="/Book" component={Book}/>
-          <Route path="/City" component={City}/>
           <Route path="/Movie" component={MovieRouter}/>
           <Route path="/Music" component={Music}/>
         </Switch>

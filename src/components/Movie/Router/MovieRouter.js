@@ -11,6 +11,7 @@ class MovieRouter extends Component {
         <Route exact path='/Movie' component={MovieHomeComponent}/>
         <Route path='/Movie/InTheaters/:moiveid' component={MoiveDetailComponent}/>
         <Route path='/Movie/InTheaters' component={InTheatersComponent}/>
+        <Route path='/Movie/ComingSoon' component={InTheatersComponent}/>
         {/* <Route path='/Movie/InTheaters' component={TestRouter}/> */}
       </Switch>
     )
