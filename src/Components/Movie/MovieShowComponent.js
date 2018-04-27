@@ -5,10 +5,9 @@ import { Spin } from 'antd';
 import { Grid, Row,Col} from 'react-bootstrap';
 
 import MovieSingleComponent from './MovieSingleComponent'
-// import {monitoringScreenSize} from '../../../CommenFunction/Screen'
 
-import '../../../Styles/MovieStyle/movieShowStyle.css'
-import '../../../Styles/MovieStyle/movieDetailStyle.css'
+import '../../Styles/MovieStyle/movieShowStyle.css'
+import '../../Styles/MovieStyle/movieDetailStyle.css'
 
 @inject("store") @observer
 class MovieShowComponent extends Component{

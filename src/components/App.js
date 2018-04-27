@@ -1,12 +1,8 @@
 import React,{Component} from 'react';
 import { Menu, Icon } from 'antd';
-// import { Navbar,Nav,NavItem} from 'react-bootstrap';
-//test mobx
-import {Switch,Route,Link} from 'react-router-dom'
-import Home from './Home/Home'
-import Book from './Book/Book'
-import MovieRouter from '../Routers/MovieRouter'
-import Music from './Music/Music'
+import {Link} from 'react-router-dom'
+
+import MainRouter from '../Routers/MainRouter'
 
 import '../Styles/CommonStyle/Nav.css'
 import 'antd/dist/antd.css';
@@ -34,12 +30,7 @@ class App extends Component {
           <Menu.Item key="music"><Link to="/Music"><Icon type="play-circle-o" />音乐</Link></Menu.Item>
         </Menu>
         <div className="fill"></div>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path="/Book" component={Book}/>
-          <Route path="/Movie" component={MovieRouter}/>
-          <Route path="/Music" component={Music}/>
-        </Switch>
+        <MainRouter/>
       </div>
 
     )

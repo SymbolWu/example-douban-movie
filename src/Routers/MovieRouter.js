@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import {Switch,Route} from 'react-router-dom';
-import MovieHomeComponent from '../Components/Movie/Component/MovieHomeComponent'
-import MovieDetailComponent from '../Components/Movie/Component/MovieDetailComponent'
-import MovieShowComponent from '../Components/Movie/Component/MovieShowComponent'
+import MovieHomeComponent from '../Components/Movie/MovieHomeComponent'
+import MovieDetailComponent from '../Components/Movie/MovieDetailComponent'
+import MovieShowComponent from '../Components/Movie/MovieShowComponent'
 
 class MovieRouter extends Component {
   render(){

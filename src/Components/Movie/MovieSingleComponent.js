@@ -2,8 +2,8 @@ import React,{Component} from 'react';
 import { Link } from 'react-router-dom';
 import { Image} from 'react-bootstrap';
 
-import  '../../../Styles/MovieStyle/movieShowStyle.css'
-import  '../../../Styles/MovieStyle/movieDetailStyle.css'
+import  '../../Styles/MovieStyle/movieShowStyle.css'
+import  '../../Styles/MovieStyle/movieDetailStyle.css'
 
 class MovieSingleComponent extends Component {
   render(){

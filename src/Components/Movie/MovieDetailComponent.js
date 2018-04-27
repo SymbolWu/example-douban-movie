@@ -2,8 +2,10 @@ import React,{Component} from 'react';
 import { Rate,Spin } from 'antd';
 import { Grid, Row,Col ,Breadcrumb} from 'react-bootstrap';
 import {inject,observer} from 'mobx-react'
-import '../../../Styles/MovieStyle/movieAllStyle.css'
-import '../../../Styles/MovieStyle/movieDetailStyle.css'
+
+import '../../Styles/MovieStyle/movieAllStyle.css'
+import '../../Styles/MovieStyle/movieDetailStyle.css'
+
 @inject("store") @observer
 class MovieDetailComponent extends Component {
 

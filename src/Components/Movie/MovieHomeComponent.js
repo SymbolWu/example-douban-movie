@@ -1,12 +1,12 @@
 import React,{Component} from 'react';
 import {inject,observer} from 'mobx-react'
 import { Spin } from 'antd';
-// import { Link } from 'react-router-dom';
+
 import MovieShowComponent from './MovieShowComponent'
+import {monitoringScreenSize} from '../../CommenFunction/Screen'
 
-import {monitoringScreenSize} from '../../../CommenFunction/Screen'
+import '../../Styles/MovieStyle/movieAllStyle.css'
 
-import '../../../Styles/MovieStyle/movieAllStyle.css'
 @inject("store") @observer
 class MovieHomeComponent extends Component{
   constructor(props) {
