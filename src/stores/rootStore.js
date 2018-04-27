@@ -1,5 +1,5 @@
-import {moiveHomeStore} from './Moive/MoiveHomeStore'
+import {movieHomeStore} from './MovieStore/MovieHomeStore'
 
 export{
-  moiveHomeStore
+  movieHomeStore
 }

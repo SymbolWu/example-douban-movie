@@ -27,16 +27,7 @@
 /*在小于768像素的屏幕里,这里的样式才生效*/
 
 @media (min-width: 767px) {
-
-    .rating hr{
+  .rating hr{
       display: none;
-      /* background-color: red */
     }
 }
-
-/* @media (max-width: 575px) {
-
-    .img-responsive{
-      display: none;
-    }
-} */

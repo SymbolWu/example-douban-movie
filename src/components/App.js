@@ -5,12 +5,10 @@ import { Menu, Icon } from 'antd';
 import {Switch,Route,Link} from 'react-router-dom'
 import Home from './Home/Home'
 import Book from './Book/Book'
-import MovieRouter from './Movie/Router/MovieRouter'
+import MovieRouter from '../Routers/MovieRouter'
 import Music from './Music/Music'
 
-import './Commen/CSS/Nav.css'
-
-
+import '../Styles/CommonStyle/Nav.css'
 import 'antd/dist/antd.css';
 class App extends Component {
   constructor(props) {
@@ -34,7 +32,6 @@ class App extends Component {
           <Menu.Item key="book"><Link to="/Book"><Icon type="book" />图书</Link></Menu.Item>
           <Menu.Item key="movie"><Link to="/Movie"><Icon type="video-camera" />电影</Link></Menu.Item>
           <Menu.Item key="music"><Link to="/Music"><Icon type="play-circle-o" />音乐</Link></Menu.Item>
-
         </Menu>
         <div className="fill"></div>
         <Switch>

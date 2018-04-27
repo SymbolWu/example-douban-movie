@@ -1,47 +1,46 @@
 import { observable ,action} from 'mobx'
 import axios from 'axios'
-class MoiveHomeStore {
+class MovieHomeStore {
   @observable intheaters_arr;
-  @observable loading;
-  @observable errorInfo;
+  @observable intheaters_loading;
+  @observable intheaters_errorInfo;
 
   @observable comingsoon_arr;
   @observable comingsoon_loading;
   @observable comingsoon_errorInfo;
 
-  @observable moiveItem;
-  @observable moiveItem_loading;
-  @observable moiveItem_errorInfo;
+  @observable movieItem;
+  @observable movieItem_loading;
+  @observable movieItem_errorInfo;
 
 
 
   constructor() {
     this.intheaters_arr = [];
-    this.loading=true;
-    this.errorInfo='';
+    this.intheaters_loading=true;
+    this.intheaters_errorInfo='';
 
     this.comingsoon_arr = [];
     this.comingsoon_loading=true;
     this.comingsoon_errorInfo='';
 
-    this.moiveItem = null;
-    this.moiveItem_loading=true;
-    this.moiveItem_errorInfo='';
+    this.movieItem = null;
+    this.movieItem_loading=true;
+    this.movieItem_errorInfo='';
   }
   @action fetchIntheatersMoive =() =>{
     axios({
       method:'get',
       baseURL:'/api',
-      // url:'v2/moFvie/in_theaters'
       url:'v2/movie/in_theaters'
     }).then(response=>{
-      this.loading =false;
+      this.intheaters_loading =false;
       this.intheaters_arr = response.data.subjects;
       })
       .catch(error=>{
         console.log('fetchIntheatersMoive_Error:'+error);
-        this.loading =false;
-        this.errorInfo = error;
+        this.intheaters_loading =false;
+        this.intheaters_errorInfo = error;
       })
   }
   @action fetchComingSoonMoive = ()=>{
@@ -64,20 +63,20 @@ class MoiveHomeStore {
       baseURL:'/api',
       url:`v2/movie/subject/${id}`
     }).then(response=>{
-      this.moiveItem_loading=false;
-      this.moiveItem=response.data;
+      this.movieItem_loading=false;
+      this.movieItem=response.data;
 
     }).catch(error=>{
       console.log('fetchMoiveDetail:'+error);
-      this.moiveItem_loading=false;
-      this.moiveItem_errorInfo=error;
+      this.movieItem_loading=false;
+      this.movieItem_errorInfo=error;
 
       })
   }
-  @action emptyLastMoiveItem = ()=>{
-    this.moiveItem=null;
-    this.moiveItem_loading=true;
+  @action emptyLastmovieItem = ()=>{
+    this.movieItem=null;
+    this.movieItem_loading=true;
   }
 }
-const moiveHomeStore =new MoiveHomeStore()
-export {moiveHomeStore}
+const movieHomeStore =new MovieHomeStore()
+export {movieHomeStore}
