@@ -3,7 +3,7 @@ import {inject,observer} from 'mobx-react'
 import { Spin } from 'antd';
 
 import MovieShowComponent from './MovieShowComponent'
-import {monitoringScreenSize} from '../../CommenFunction/Screen'
+import {monitoringScreenSize} from '../../CommenFunction/ToolFunction'
 
 import '../../Styles/MovieStyle/movieAllStyle.css'
 
@@ -17,13 +17,13 @@ class MovieHomeComponent extends Component{
     }
   }
   componentDidMount(){
-    let {intheaters_arr,comingsoon_arr,fetchComingSoonMoive,fetchIntheatersMoive}=this.store;
-    if(intheaters_arr.length===0){
-      fetchIntheatersMoive();
+    let {pickMovieArrMap}=this.store;
+    for(let value of pickMovieArrMap.values()){
+      if(value.section_arr.length===0){
+          value.getMovieFunction();
+      }
     }
-    if(comingsoon_arr.length===0){
-      fetchComingSoonMoive();
-    }
+
     this.setState(monitoringScreenSize());
     window.onresize = () =>{
       this.setState(monitoringScreenSize());
@@ -31,29 +31,38 @@ class MovieHomeComponent extends Component{
   }
   render(){
 
-    let {
-      intheaters_errorInfo,
-      intheaters_arr,
-      comingsoon_arr,
-      comingsoon_errorInfo
-    }=this.store;
+    let {pickMovieArrMap}=this.store;
 
-    let errorInTheaters = Boolean(intheaters_errorInfo);
-    let errorComingSoon = Boolean(comingsoon_errorInfo);
+    let isError = false;
+    let isNotBlank =true;
+    let movie_Arr_Group=[];
+    for (let value of pickMovieArrMap.values()) {
+      if(Boolean(value.errorInfo)){
+        isError=true;
+      }
+      value.section_arr.length===0?isNotBlank=false:movie_Arr_Group.push(value);
+    }
 
 
-    if(intheaters_arr.length>0&&comingsoon_arr.length>0){
+
+    if(isNotBlank){
+      console.log();
       return(
         <div>
-          <MovieShowComponent showArr={intheaters_arr} link_path={'/Movie/InTheaters'} section_Title={'影院热映'} is768={this.state.is768}/>
-          <MovieShowComponent showArr={comingsoon_arr} link_path={'/Movie/ComingSoon'} section_Title={'即将上映'} is768={this.state.is768}/>
+          {
+            movie_Arr_Group.map((item,index)=>{
+              return(
+                <MovieShowComponent key={item.section_Title} showArr={item.section_arr} link_path={item.link_path} section_Title={item.section_Title} is768={this.state.is768}/>
+              )
+            })
+          }
         </div>
         )
-    }else if(errorInTheaters||errorComingSoon){
+    }else if(isError){
       return(
           <h1>信息异常</h1>
         )
-    } else{
+    }else{
       return(
         <div className="example">
           <Spin size="large"/>
