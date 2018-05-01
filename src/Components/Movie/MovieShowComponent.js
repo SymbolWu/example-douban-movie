@@ -100,7 +100,7 @@ class MovieShowComponent extends Component{
             {
               show_in_component_arr.map((item,index)=>{
                 return(
-                  <MovieSingleComponent key={item.id} item={item}/>
+                  <MovieSingleComponent key={item.id} item={item} is768={this.props.is768}/>
                 )
               })
             }

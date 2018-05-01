@@ -43,8 +43,6 @@ class MovieHomeComponent extends Component{
       value.section_arr.length===0?isNotBlank=false:movie_Arr_Group.push(value);
     }
 
-
-
     if(isNotBlank){
       console.log();
       return(
