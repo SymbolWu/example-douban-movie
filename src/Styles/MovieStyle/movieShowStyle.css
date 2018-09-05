@@ -16,9 +16,6 @@
   white-space: nowrap;
   text-align: center;
 
-  /* position: absolute; */
-
-
   margin-bottom: 4px
 
 }
@@ -71,7 +68,6 @@
   .slide-box{
     margin-top: 5px;
     display: -webkit-box;
-    /* overflow-x: scroll; */
     overflow-x: auto;
     -webkit-overflow-scrolling:touch;
     font-size:14px;
@@ -95,26 +91,17 @@
     width: auto;
   }
   .float-title-768{
-
-    /* width:-webkit-calc(100% - 20px);
-    width:-moz-calc(100% - 20px);
-    width:calc(100% - 20px); */
     position: absolute;
     width: 100px;
     margin-left: 10px;
-    /* margin-bottom: -140px; */
     height: 30%;
-    /* top:140px; */
     float:left;
     bottom: 0;
-    /* margin-bottom: -140px; */
-
-
 
     background: -webkit-linear-gradient(top,rgba(5, 20, 41,0.2),rgba(5, 20, 41,1)); /* Safari 5.1 - 6 */
     background: -o-linear-gradient(bottom,rgba(5, 20, 41,0.2),rgba(5, 20, 41,1)); /* Opera 11.1 - 12*/
     background: -moz-linear-gradient(bottom,rgba(5, 20, 41,0.2),rgba(5, 20, 41,1)); /* Firefox 3.6 - 15*/
     background: linear-gradient(to bottom, rgba(5, 20, 41,0.2), rgba(5, 20, 41,1)); /* 标准的语法 */
-    /* background-color: rgba(5, 20, 41, 0.7); */
+
   }
 }
