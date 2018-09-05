@@ -14,11 +14,7 @@ class MovieDetailComponent extends Component {
     this.store = props.store.movieHomeStore;
   }
   componentWillMount(){
-<<<<<<< Updated upstream
-    //添加注释 Test
-=======
-    //添加注释 ---TEST
->>>>>>> Stashed changes
+    //添加注释  Online
     let {movieItem,emptyLastmovieItem}=this.store;
     //检测 store 中是否已经有movieItem ,如果有，且于当前所需要展示的电影ID不同，则提前清除。
     (movieItem!==null&&this.props.match.params.movieid!==movieItem.id)?emptyLastmovieItem():console.log('last');
