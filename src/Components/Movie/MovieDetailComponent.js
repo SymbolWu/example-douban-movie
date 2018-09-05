@@ -16,12 +16,12 @@ class MovieDetailComponent extends Component {
   componentWillMount(){
     //添加注释 online Test 2179
     let {movieItem,emptyLastmovieItem}=this.store;
-    //检测 store 中是否已经有movieItem ,如果有，且于当前所需要展示的电影ID不同，则提前清除。(5)
+    //检测 store 中是否已经有movieItem ,如果有，且于当前所需要展示的电影ID不同，则提前清除。(6)
     (movieItem!==null&&this.props.match.params.movieid!==movieItem.id)?emptyLastmovieItem():console.log('last');
   }
   componentDidMount(){
     //add 56
-    //11111
+    //new_
     let {fetchMoiveDetail}=this.store;
     fetchMoiveDetail(this.props.match.params.movieid);
   }
